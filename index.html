@@ -300,7 +300,7 @@
     nav.bottom-nav button.active {
       color: #ffd24d;
     }
-    
+
     .container {
       width: 95%;
       max-width: 850px;
@@ -619,8 +619,8 @@
     }
     .copy-action-btn:hover {
       background: #1b52cb;
-      }
-    
+    }
+
     @media(max-width:600px){
       .action-row { flex-direction: column; }
       iframe { height: 200px; }
@@ -739,7 +739,7 @@
       <button onclick="showAdminPage('adminUsers', this)" style="background:transparent; color:#fff; border:none; cursor:pointer; font-weight:700;" class="active">Manage Users</button>
       <button onclick="showAdminPage('adminWithdrawals', this)" style="background:transparent; color:#fff; border:none; cursor:pointer; font-weight:700;">Withdrawal Requests</button>
     </nav>
-                <div class="container">
+                            <div class="container">
       <div id="adminUsers" class="admin-page card" style="display:block;">
         <div class="section-title">Registered Users & Activation Requests</div>
         <div class="table-responsive">
@@ -821,7 +821,7 @@
           <iframe id="videoFrame" src="https://www.youtube.com/embed/-3LBrIc3UiA" allowfullscreen></iframe>
           <div class="video-meta" id="videoNumber">Video 1 of 4</div>
           <div id="status">Watch for 30 seconds to unlock your reward.</div>
-          <div class="action-row">
+          <div class="always-row" style="display: flex; gap: 14px; margin-top: 10px;">
             <button id="claimBtn" class="btn btn-gold" onclick="claimReward()" disabled>Claim Reward</button>
             <button class="btn btn-blue" onclick="nextVideo()">Next Video</button>
           </div>
@@ -918,7 +918,7 @@
           </div>
         </div>
       </div>
-              
+
       <div id="withdrawPage" class="page">
         <div class="card">
           <div class="section-title">Withdraw Funds</div>
@@ -969,8 +969,8 @@
   </div>
 
   <script>
-    // ⚠️ PASTE YOUR COPIED GOOGLE WEB APP DEPLOYMENT URL HERE!
-    const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_WEB_APP_URL_HERE";
+    // ⚠️ LIVE INSTALLED GOOGLE WEB APP DEPLOYMENT BACKEND URL
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxMLGt4M4WdNfPUfe_SXdcgx81-DaPHzIsxYIY5vi2KlqynmkbU9HhZuCqyhC6idCAq/exec";
 
     let users = [];
     let withdrawals = [];
@@ -1114,7 +1114,7 @@
         }
       }
     }
-    function startLiveTickerEngine() {
+       function startLiveTickerEngine() {
       const ticker = document.getElementById("livePayoutTicker");
       const phonePrefixes = ["0712", "0722", "0701", "0754", "0790", "0741", "0733"];
       const phrases = [
@@ -1249,7 +1249,7 @@
       localStorage.setItem("currentUserPhone", user.phone);
       restoreSessionView();
     }
-    
+
     function submitMpesaCode() {
       const user = getCurrentUser();
       const code = document.getElementById("mpesaCodeInput").value.trim().toUpperCase();
@@ -1533,9 +1533,8 @@
           return;
         }
         user.referralBalance = Number(user.referralBalance) - amount;
-      }
-
-      const newWithdrawal = {
+    }
+          const newWithdrawal = {
         id: "WD" + Math.floor(Math.random() * 90000 + 10000),
         username: user.phone,
         walletType: source === "video" ? "Video Watch" : "Referral",
