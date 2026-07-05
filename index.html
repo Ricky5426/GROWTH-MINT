@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Make Money Online - Watch Videos & Earn</title>
+  <title>GROWTH MINT - Premium Microtask & Network Ecosystem</title>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
     * {
@@ -14,18 +17,17 @@
     }
 
     body {
-      background: #4a0c18; /* Refined Deep Burgundy */
+      background: #0f172a; 
       color: #fff;
       min-height: 100vh;
-      padding-bottom: 75px; /* Keeps content clear of bottom nav */
+      padding-bottom: 75px; 
     }
 
-    /* Advanced Modern Header Layout */
     header {
-      background: #2f66e0;
+      background: #1e293b;
       color: #fff;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 16px 20px;
       position: sticky;
@@ -35,14 +37,17 @@
     }
 
     .header-title {
-      font-size: 20px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #3b82f6;
+      text-transform: uppercase;
+      text-align: center;
     }
 
     .logout-header-btn {
+      position: absolute;
+      right: 20px;
       background: rgba(255, 255, 255, 0.15);
       color: #fff;
       border: none;
@@ -58,14 +63,13 @@
     }
 
     .logout-header-btn:hover {
-      background: rgba(255, 61, 61, 0.3);
+      background: rgba(239, 68, 68, 0.4);
     }
 
-    /* Real-Time Live Activity Payout Ticker Styles */
     .ticker-wrap {
       width: 100%;
-      background: #ffd24d;
-      color: #1f2432;
+      background: #3b82f6;
+      color: #ffffff;
       padding: 6px 10px;
       overflow: hidden;
       white-space: nowrap;
@@ -101,7 +105,7 @@
     }
 
     .blog-section h2 {
-      color: #2f66e0;
+      color: #3b82f6;
       font-size: 22px;
       margin-bottom: 12px;
       border-bottom: 2px solid #e1e5ea;
@@ -109,7 +113,7 @@
     }
 
     .blog-section h3 {
-      color: #4a0c18;
+      color: #1e293b;
       font-size: 17px;
       margin-top: 15px;
       margin-bottom: 5px;
@@ -134,7 +138,7 @@
     }
 
     .login-card {
-      background: #2f3448;
+      background: #1e293b;
       border-radius: 20px;
       padding: 25px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -142,7 +146,7 @@
 
     .login-title {
       text-align: center;
-      color: #ffd24d;
+      color: #3b82f6;
       font-size: 28px;
       font-weight: 700;
       margin-bottom: 6px;
@@ -150,7 +154,7 @@
 
     .login-sub {
       text-align: center;
-      color: #ccc;
+      color: #94a3b8;
       margin-bottom: 20px;
       font-size: 14px;
     }
@@ -158,7 +162,7 @@
     input, select {
       width: 100%;
       padding: 14px;
-      border: 1px solid #46598a;
+      border: 1px solid #334155;
       outline: none;
       border-radius: 12px;
       font-size: 15px;
@@ -179,16 +183,132 @@
       margin-top: 8px;
     }
 
-    .btn-blue { background: #2f66e0; color: #fff; }
-    .btn-blue:hover { background: #1b52cb; }
-    .btn-gold { background: #f7c744; color: #1f2432; }
-    .btn-gold:hover { background: #e3b22b; }
-    .btn-red-close { background: #ff4d4d; color: #fff; }
+    .btn-blue { background: #3b82f6; color: #fff; }
+    .btn-blue:hover { background: #2563eb; }
+    .btn-gold { background: #10b981; color: #fff; }
+    .btn-gold:hover { background: #059669; }
     
-    .btn-green { background: #1fbf63; color: white; padding: 6px 12px; font-size: 13px; border-radius: 8px; cursor: pointer; border:none; }
-    .btn-red { background: #ff4d4d; color: white; padding: 6px 12px; font-size: 13px; border-radius: 8px; cursor: pointer; border:none; }
+    /* Luxury Premium Gold Button Overrides */
+    .btn-goldish {
+      background: linear-gradient(135deg, #d4af37 0%, #f59e0b 50%, #b45309 100%);
+      color: #000000 !important;
+      text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+      border: 1px solid #f59e0b;
+    }
+    .btn-goldish:hover {
+      background: linear-gradient(135deg, #f59e0b 0%, #d4af37 50%, #92400e 100%);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+    }
+    .btn-goldish:disabled {
+      background: #475569 !important;
+      color: #94a3b8 !important;
+      border-color: #334155 !important;
+      box-shadow: none !important;
+      cursor: not-allowed;
+    }
 
-    /* Pop-up Overlay / Modal Structure */
+    .btn-red-close { background: #ef4444; color: #fff; }
+    
+    .btn-green { background: #10b981; color: white; padding: 6px 12px; font-size: 13px; border-radius: 8px; cursor: pointer; border:none; }
+    .btn-red { background: #ef4444; color: white; padding: 6px 12px; font-size: 13px; border-radius: 8px; cursor: pointer; border:none; }
+    .btn-orange { background: #f59e0b; color: white; padding: 6px 12px; font-size: 13px; border-radius: 8px; cursor: pointer; border:none; }
+
+    /* Active Presence indicator components */
+    .active-status-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+      padding: 4px 10px;
+      border-radius: 30px;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 10px #10b981, 0 0 20px #10b981;
+      animation: pulseGlow 1.8s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      0% { transform: scale(0.9); opacity: 0.6; }
+      100% { transform: scale(1.1); opacity: 1; }
+    }
+
+    /* Game UI Component Scaffolding */
+    .mini-game-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 15px;
+      color: #1e293b;
+      position: relative;
+    }
+    .wheel-container {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      margin: 15px auto;
+      border-radius: 50%;
+      border: 6px solid #1e293b;
+      overflow: hidden;
+      transition: transform 3s cubic-bezier(0.1, 0.8, 0.3, 1);
+      background: conic-gradient(#3b82f6 0deg 90deg, #10b981 90deg 180deg, #ef4444 180deg 270deg, #f59e0b 270deg 360deg);
+    }
+    .wheel-segment-label {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      transform-origin: bottom right;
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .wheel-pointer {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 20px solid #fff;
+      z-index: 100;
+      filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
+    }
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .memory-card-element {
+      height: 55px;
+      background: #334155;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .memory-card-element.flipped {
+      background: #3b82f6;
+    }
+
     .modal-overlay {
       display: none;
       position: fixed;
@@ -204,7 +324,7 @@
     }
 
     .modal-content {
-      background: #2f3448;
+      background: #1e293b;
       width: 100%;
       max-width: 450px;
       border-radius: 20px;
@@ -212,7 +332,6 @@
       box-shadow: 0 12px 35px rgba(0,0,0,0.5);
     }
 
-    /* M-Pesa Drop Zone Styles */
     .file-drop-area {
       position: relative;
       display: flex;
@@ -220,7 +339,7 @@
       justify-content: center;
       width: 100%;
       padding: 20px;
-      border: 2px dashed #46598a;
+      border: 2px dashed #334155;
       border-radius: 12px;
       background-color: rgba(255,255,255,0.05);
       margin-bottom: 12px;
@@ -228,7 +347,7 @@
       transition: 0.2s;
     }
     .file-drop-area:hover {
-      border-color: #ffd24d;
+      border-color: #3b82f6;
       background-color: rgba(255,255,255,0.08);
     }
     .file-input {
@@ -241,7 +360,7 @@
       cursor: pointer;
     }
     .fake-btn {
-      background-color: #1fbf63;
+      background-color: #10b981;
       border-radius: 6px;
       padding: 6px 12px;
       font-size: 12px;
@@ -262,13 +381,12 @@
       display: none;
     }
 
-    /* Fixed Premium Floating Bottom Navigation */
     nav.bottom-nav {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: #222634;
+      background: #1e293b;
       display: flex;
       justify-content: space-around;
       padding: 8px 4px;
@@ -279,7 +397,7 @@
 
     nav.bottom-nav button {
       background: transparent;
-      color: #9aa4bf;
+      color: #94a3b8;
       border: none;
       padding: 6px 0;
       cursor: pointer;
@@ -288,7 +406,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 18%;
+      width: 15%;
       transition: color 0.2s;
     }
 
@@ -298,7 +416,7 @@
     }
 
     nav.bottom-nav button.active {
-      color: #ffd24d;
+      color: #3b82f6;
     }
 
     .container {
@@ -316,7 +434,7 @@
     }
 
     .card {
-      background: #2f3448;
+      background: #1e293b;
       border-radius: 22px;
       padding: 22px;
       margin-bottom: 20px;
@@ -324,8 +442,8 @@
     }
 
     .promo-banner {
-      background: linear-gradient(135deg, #ffd24d, #f7c744);
-      color: #1f2432;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: #ffffff;
       border-radius: 16px;
       padding: 14px;
       margin-bottom: 20px;
@@ -337,20 +455,20 @@
     }
 
     .welcome-card {
-      background: #ffd24d !important;
-      color: #1f2432 !important;
+      background: #3b82f6 !important;
+      color: #ffffff !important;
     }
 
     .welcome-card .section-title {
-      color: #2f66e0 !important;
+      color: #ffffff !important;
     }
 
     .welcome-card .welcome-highlight {
-      color: #111 !important;
+      color: #ffffff !important;
     }
 
     .welcome-card .sub-text {
-      color: #222 !important;
+      color: #f1f5f9 !important;
     }
 
     .kpi-grid {
@@ -361,7 +479,7 @@
     }
 
     .kpi-card {
-      background: #2f3448;
+      background: #0f172a;
       border-radius: 14px;
       padding: 15px;
       color: #fff;
@@ -370,7 +488,7 @@
 
     .kpi-title {
       font-size: 11px;
-      color: #ffd24d;
+      color: #3b82f6;
       text-transform: uppercase;
       font-weight: 700;
       margin-bottom: 5px;
@@ -388,11 +506,11 @@
     }
 
     .video-card-white .section-title {
-      color: #2f66e0 !important;
+      color: #3b82f6 !important;
     }
 
     .video-card-white #status {
-      color: #2f66e0 !important;
+      color: #1e293b !important;
     }
 
     .video-card-white .video-meta {
@@ -400,14 +518,14 @@
     }
 
     .section-title {
-      color: #ffd24d;
+      color: #3b82f6;
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 10px;
     }
 
     .sub-text {
-      color: #e6e6e6;
+      color: #cbd5e1;
       font-size: 14px;
       line-height: 1.6;
       margin-bottom: 15px;
@@ -437,7 +555,7 @@
 
     #status {
       text-align: center;
-      color: #ffd24d;
+      color: #3b82f6;
       font-size: 16px;
       font-weight: 700;
       margin: 15px 0;
@@ -454,14 +572,14 @@
     }
 
     .wallet-value {
-      color: #18ff8d;
+      color: #10b981;
       font-size: 24px;
       font-weight: 700;
       margin-top: 4px;
     }
 
     .list-box {
-      background: #46598a;
+      background: #334155;
       border-radius: 16px;
       padding: 18px;
       margin-top: 14px;
@@ -484,16 +602,15 @@
 
     th, td {
       padding: 12px;
-      border-bottom: 1px solid #46598a;
+      border-bottom: 1px solid #334155;
       font-size: 14px;
     }
 
     th {
-      background: #222634;
-      color: #ffd24d;
+      background: #0f172a;
+      color: #3b82f6;
     }
 
-    /* Premium Pill Badges */
     .badge {
       padding: 6px 12px;
       border-radius: 20px;
@@ -502,11 +619,11 @@
       text-transform: uppercase;
       display: inline-block;
     }
-    .badge-pending { background: rgba(255, 210, 77, 0.2); color: #ffd24d; border: 1px solid #ffd24d; }
-    .badge-approved { background: rgba(31, 191, 99, 0.2); color: #1fbf63; border: 1px solid #1fbf63; }
-    .badge-rejected { background: rgba(255, 77, 77, 0.2); color: #ff4d4d; border: 1px solid #ff4d4d; }
+    .badge-pending { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid #f59e0b; }
+    .badge-approved { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981; }
+    .badge-rejected { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; }
+    .badge-suspended { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; }
 
-    /* Advanced Premium Profile Layout Styles */
     .profile-card-container {
       background: #ffffff;
       color: #222;
@@ -532,12 +649,12 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #2f66e0;
-      box-shadow: 0 4px 12px rgba(47, 102, 224, 0.3);
+      border: 4px solid #3b82f6;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
     }
 
     .profile-header-block h2 {
-      color: #1f2432;
+      color: #1e293b;
       font-size: 24px;
       font-weight: 700;
     }
@@ -550,10 +667,10 @@
     }
 
     .profile-info-widget {
-      background: #f4f6fa;
+      background: #f8fafc;
       border-radius: 16px;
       padding: 16px 14px;
-      border: 1px solid #e9ecf2;
+      border: 1px solid #e2e8f0;
     }
 
     .profile-info-widget-full {
@@ -562,7 +679,7 @@
 
     .widget-label {
       font-size: 12px;
-      color: #707b93;
+      color: #64748b;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -572,27 +689,26 @@
     .widget-value {
       font-size: 16px;
       font-weight: 700;
-      color: #1f2432;
+      color: #1e293b;
     }
 
     .widget-value-monetary {
       font-size: 20px;
       font-weight: 700;
-      color: #2f66e0;
+      color: #3b82f6;
     }
 
     .small-note {
-      color: #ddd;
+      color: #cbd5e1;
       font-size: 13px;
       margin-top: 10px;
       line-height: 1.6;
     }
 
-    /* Professional Referral UI Classes */
     .link-share-container {
       display: flex;
-      background: #222634;
-      border: 1px solid #46598a;
+      background: #0f172a;
+      border: 1px solid #334155;
       border-radius: 12px;
       overflow: hidden;
       margin-top: 12px;
@@ -601,14 +717,14 @@
       flex: 1;
       padding: 14px;
       font-size: 13px;
-      color: #ffd24d;
+      color: #3b82f6;
       font-family: monospace;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     .copy-action-btn {
-      background: #2f66e0;
+      background: #3b82f6;
       color: white;
       border: none;
       padding: 0 18px;
@@ -618,7 +734,79 @@
       transition: background 0.2s;
     }
     .copy-action-btn:hover {
-      background: #1b52cb;
+      background: #2563eb;
+    }
+
+    .trivia-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .trivia-q-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+    .trivia-options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    .trivia-opt-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #222;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+    .trivia-opt-btn:hover {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+    .trivia-opt-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Support Chat Bubble styling */
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 10px;
+      background: #0f172a;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .chat-bubble {
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 13px;
+      line-height: 1.4;
+      max-width: 80%;
+    }
+    .chat-bubble.user {
+      background: #3b82f6;
+      color: #fff;
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+    }
+    .chat-bubble.admin {
+      background: #334155;
+      color: #fff;
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
     }
 
     @media(max-width:600px){
@@ -626,13 +814,14 @@
       iframe { height: 200px; }
       .profile-dashboard-grid { grid-template-columns: 1fr; }
       .profile-info-widget-full { grid-column: span 1; }
+      .trivia-options-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="header-title">💰 Make Money Online</div>
+    <div class="header-title">GROWTH MINT</div>
     <button class="logout-header-btn" id="headerLogoutBtn" onclick="logout()" style="display:none;">
       <span style="font-size:15px;">🚪</span> Logout
     </button>
@@ -640,30 +829,34 @@
 
   <div class="ticker-wrap">
     <div class="ticker-content" id="livePayoutTicker">
-      🔥 Loading latest platform payouts... Verification engines active.
+      🔥 Secure tracking system initialized... Matrix distribution status live.
     </div>
   </div>
 
   <div id="loginPage">
     <div class="blog-section">
-      <h2>How To Earn Rewards Online</h2>
-      <p>Welcome to the ultimate video rewards platform where your time translates directly into income. We offer a simple, transparent path for users looking to maximize their daily earnings from home.</p>
+      <h2>Professional Network Matrix Overview</h2>
+      <p>Welcome to <b>GROWTH MINT</b>, a high-efficiency digital landscape engineered to optimize task rewards and affiliate structures transparently.</p>
       
-      <h3>🚀 Premium Affiliate Program</h3>
-      <p>Accelerate your growth using our <b>Tier-1 Partnership Program</b>. For every unique active partner you introduce to the network, your profile receives an instant <b>KSh 15.00 contract credit</b> immediately upon successful account audit and administrative profile verification.</p>
-      
-      <h3>🎬 Watch & Earn Simple Steps</h3>
+      <h3>🚀 Two-Tiered Network Structure</h3>
+      <p>Our decentralized organizational growth system leverages deep verification architectures across multiple layers:</p>
       <ul>
-        <li>Create a free account or log in below using your active mobile number.</li>
-        <li>Visit the featured video section on your home dashboard.</li>
-        <li>Stream videos for just 30 seconds to automatically unlock cash payouts.</li>
-        <li>Withdraw when you meet minimum targets: <b>KSh 250</b> for videos, and <b>KSh 100</b> for referrals!</li>
+        <li><b>Level 1 Direct Affiliate:</b> Secure an instantaneous credit asset of <b>KSh 20.00</b> whenever a direct referral successfully initializes and activates an account profile matrix.</li>
+        <li><b>Level 2 Indirect Affiliate:</b> Receive a passive tier credit asset of <b>KSh 10.00</b> whenever a node added by your network performs an invitation and setup completion.</li>
+      </ul>
+      
+      <h3>🎬 Stream Operations & Verification</h3>
+      <ul>
+        <li>Log in below securely using an active M-Pesa mobile routing address.</li>
+        <li>Access designated premium videos (Each viewed once per calendar day).</li>
+        <li>Maintain persistent active streams for 30 seconds to lock down individual payouts of <b>KSh 5.00 per video</b>.</li>
+        <li>Dynamic dashboard distribution threshold targets: <b>KSh 250</b> for general tasks, and <b>KSh 100</b> for network balances.</li>
       </ul>
     </div>
-
+    
     <div class="login-card">
-      <div class="login-title" id="loginLoadingTitle">Login</div>
-      <div class="login-sub" id="loginLoadingSub">Enter your M-Pesa mobile number to sign in.</div>
+      <div class="login-title" id="loginLoadingTitle">Sign In</div>
+      <div class="login-sub" id="loginLoadingSub">Enter verification credentials below to access your account matrix.</div>
 
       <input type="text" id="loginPhone" placeholder="Enter M-Pesa Mobile Number">
       <input type="password" id="loginPassword" placeholder="Enter password">
@@ -675,8 +868,8 @@
 
   <div class="modal-overlay" id="registerModal">
     <div class="modal-content">
-      <div class="login-title" style="font-size:24px; margin-bottom:5px;">Create Free Account</div>
-      <div class="login-sub" style="margin-bottom:15px;">Fill out the fields below to start earning.</div>
+      <div class="login-title" style="font-size:24px; margin-bottom:5px;">Establish User Node</div>
+      <div class="login-sub" style="margin-bottom:15px;">Fill out the structural metrics to connect.</div>
 
       <input type="text" id="regUsername" placeholder="Enter Username">
       <input type="text" id="regPhone" placeholder="Enter Mobile Number">
@@ -690,23 +883,23 @@
 
   <div id="pendingActivationPage">
     <div class="card" style="text-align:center;">
-      <div class="login-title" style="color:#ffd24d; font-size:24px;">🔒 Account Activation Required</div>
+      <div class="login-title" style="color:#3b82f6; font-size:24px;">🔒 Profile Verification Required</div>
       <p class="sub-text" style="margin-top:15px; color:#fff; font-size:13px;">
-        Your account details have been securely registered, but you must complete your registration fee payment to activate your video dashboard profile.
+        Your digital credentials are registered. Complete the security administrative setup registration protocol to unlock active server streams.
       </p>
       
       <div class="list-box" style="text-align:left; background:#fff; color:#222; margin:20px 0;">
-        <h4 style="color:#2f66e0; margin-bottom:8px;">📌 Step-by-Step Payment Instructions:</h4>
+        <h4 style="color:#3b82f6; margin-bottom:8px;">📌 Activation Proof Steps:</h4>
         <ol style="margin-left:20px; line-height:1.6; font-size:14px; color:#444;">
-          <li>Send the registration fee to the administrator via M-Pesa.</li>
-          <li>Provide payment proof below by either entering the 10-digit <b>M-Pesa Code</b> OR uploading a <b>Screenshot Receipt Image</b>.</li>
-          <li>Click submit and wait for our system admin to approve your account setup.</li>
+          <li>Process an onboarding administrative standard fee of <b>50 KSh</b> via M-Pesa text protocol.</li>
+          <li>Input your verified 10-digit <b>M-Pesa transaction key</b> or supply a clear digital dashboard screenshot snippet below.</li>
+          <li>Submit data to allow backend processing to activate video streaming assets.</li>
         </ol>
       </div>
 
       <input type="text" id="mpesaCodeInput" placeholder="Option 1: Enter M-Pesa Code (e.g. SFG78XHJ99)" style="text-transform: uppercase; margin-bottom: 8px;">
       
-      <div style="text-align:center; margin: 8px 0; font-size: 12px; font-weight: bold; color: #ffd24d;">— OR PROVIDE RECEIPT IMAGE —</div>
+      <div style="text-align:center; margin: 8px 0; font-size: 12px; font-weight: bold; color: #3b82f6;">— OR PROVIDE RECEIPT IMAGE —</div>
 
       <div class="file-drop-area">
         <span class="fake-btn">Choose Image</span>
@@ -714,8 +907,9 @@
         <input class="file-input" type="file" id="mpesaReceiptFile" accept="image/*">
       </div>
 
-      <button class="btn btn-gold" id="submitMpesaBtn" onclick="submitMpesaCode()">Submit Payment Proof</button>
-      <div id="activationStatusMsg" style="margin-top:12px; font-weight:700; color:#f7c744; font-size:14px;">Status: Waiting for payment submittal...</div>
+      <button class="btn btn-gold" id="submitMpesaBtn" onclick="payWithPaystack()">Pay 50 KSh to Activate</button>
+
+      <div id="activationStatusMsg" style="margin-top:12px; font-weight:700; color:#3b82f6; font-size:14px;">Status: Waiting for verification proof upload...</div>
       
       <hr style="margin:20px 0; opacity:0.15;">
       <button class="btn btn-blue" onclick="logout()">Return to Login Screen</button>
@@ -725,29 +919,34 @@
   <div class="modal-overlay" id="adminLightboxModal" onclick="closeAdminLightbox()">
     <div class="modal-content" style="max-width: 500px; text-align: center;" onclick="event.stopPropagation()">
       <div class="section-title" style="font-size: 18px; margin-bottom:12px;">M-Pesa Screenshot Receipt</div>
-      <img id="lightboxImageDisplay" src="" alt="Proof Preview" style="max-width:100%; max-height:400px; border-radius:10px; border:2px solid #46598a; margin-bottom:15px;">
+      <img id="lightboxImageDisplay" src="" alt="Proof Preview" style="max-width:100%; max-height:400px; border-radius:10px; border:2px solid #334155; margin-bottom:15px;">
       <button class="btn btn-red-close" style="margin-top:0;" onclick="closeAdminLightbox()">Close View</button>
     </div>
   </div>
 
-   <div id="adminDashboard">
-    <div class="card" style="margin:15px; border-radius:14px; padding:12px; background:#222634; display:flex; justify-content:space-between; align-items:center;">
-      <span style="font-weight:700; color:#ffd24d;">🛠️ Administrative Portal</span>
+  <div id="adminDashboard">
+    <div class="card" style="margin:15px; border-radius:14px; padding:12px; background:#1e293b; display:flex; justify-content:space-between; align-items:center;">
+      <span style="font-weight:700; color:#3b82f6;">🛠️ Admin Configuration Console</span>
       <button class="btn-red" style="padding:6px 12px; width:auto; margin:0;" onclick="logout()">Exit Portal</button>
     </div>
-    <nav style="display:flex; justify-content: space-around; background:#393e52; padding:10px 0; margin-bottom:15px;">
+    <nav style="display:flex; justify-content: space-around; background:#334155; padding:10px 0; margin-bottom:15px;">
       <button onclick="showAdminPage('adminUsers', this)" style="background:transparent; color:#fff; border:none; cursor:pointer; font-weight:700;" class="active">Manage Users</button>
-      <button onclick="showAdminPage('adminWithdrawals', this)" style="background:transparent; color:#fff; border:none; cursor:pointer; font-weight:700;">Withdrawal Requests</button>
+      <button onclick="showAdminPage('adminVideos', this)" style="background:transparent; color:#fff; border:none; cursor:pointer; font-weight:700;">Configure Streams</button>
+      <button onclick="showAdminPage('adminTrivia', this)" style="background:transparent; color:#fff; border:none; cursor:pointer; font-weight:700;">Manage Trivia</button>
+      <button onclick="showAdminPage('adminGames', this)" style="background:transparent; color:#fff; border:none; cursor:pointer; font-weight:700;">Game Activations</button>
+      <button onclick="showAdminPage('adminMessages', this)" style="background:transparent; color:#fff; border:none; cursor:pointer; font-weight:700;">User Messages</button>
+      <button onclick="showAdminPage('adminWithdrawals', this)" style="background:transparent; color:#fff; border:none; cursor:pointer; font-weight:700;">Withdrawal Actions</button>
     </nav>
-        <div class="container">
+    <div class="container">
       <div id="adminUsers" class="admin-page card" style="display:block;">
-        <div class="section-title">Registered Users & Activation Requests</div>
+        <div class="section-title">User Validation & Onboarding Proof Matrix</div>
         <div class="table-responsive">
           <table>
             <thead>
               <tr>
                 <th>Username</th>
                 <th>Mobile Number</th>
+                <th>Registered Timestamp</th>
                 <th>Status</th>
                 <th>M-Pesa Proof</th>
                 <th>Referred By</th>
@@ -757,6 +956,49 @@
             <tbody id="adminUsersTable"></tbody>
           </table>
         </div>
+      </div>
+
+      <div id="adminVideos" class="admin-page card" style="display:none;">
+        <div class="section-title">Dynamic Video Asset System Override</div>
+        <p class="sub-text">Administrators can update specific video assets daily or preserve the operational sequence.</p>
+        <div id="adminVideoContainer"></div>
+        <button class="btn btn-gold" onclick="saveAdminVideoChanges()">Apply Video Metric Structural Updates</button>
+      </div>
+
+      <div id="adminTrivia" class="admin-page card" style="display:none;">
+        <div class="section-title">Configure Live Trivia Program</div>
+        <p class="sub-text">Update the global operational trivia set text structures directly below.</p>
+        <div id="adminTriviaFormContainer"></div>
+        <button class="btn btn-gold" onclick="saveAdminTriviaChanges()">Save Operational Questions</button>
+      </div>
+
+      <div id="adminGames" class="admin-page card" style="display:none;">
+        <div class="section-title">Micro-Interactive Game Switches</div>
+        <p class="sub-text">Toggle deployment states for high-retention ecosystem games. Each completed round distributes 3 KSh standard ledger credits.</p>
+        <div style="background: #334155; padding: 16px; border-radius: 12px; margin-bottom: 12px;">
+          <label style="font-weight: 700; color: #fff; display: block; margin-bottom: 6px;">Daily Spin Wheel Activation Strategy:</label>
+          <select id="adminToggleSpinWheel">
+            <option value="active">Activated / Online</option>
+            <option value="disabled">Disabled / Locked</option>
+          </select>
+          <label style="font-weight: 700; color: #fff; display: block; margin-top: 12px; margin-bottom: 6px;">Higher or Lower Logic Engine:</label>
+          <select id="adminToggleHigherLower">
+            <option value="active">Activated / Online</option>
+            <option value="disabled">Disabled / Locked</option>
+          </select>
+          <label style="font-weight: 700; color: #fff; display: block; margin-top: 12px; margin-bottom: 6px;">Memory Match Card Game Layer:</label>
+          <select id="adminToggleMemoryMatch">
+            <option value="active">Activated / Online</option>
+            <option value="disabled">Disabled / Locked</option>
+          </select>
+        </div>
+        <button class="btn btn-gold" onclick="saveAdminGameToggles()">Deploy Feature Switches</button>
+      </div>
+
+      <div id="adminMessages" class="admin-page card" style="display:none;">
+        <div class="section-title">Support Ticket Administration</div>
+        <p class="sub-text">Read incoming inquiries from user nodes and send systematic structural replies.</p>
+        <div id="adminTicketsContainer"></div>
       </div>
 
       <div id="adminWithdrawals" class="admin-page card" style="display:none;">
@@ -785,47 +1027,91 @@
             
       <div id="homePage" class="page active">
         <div class="promo-banner">
-          🔥 EARN KSh 250 WHEN YOU INVITE 20 USERS THIS WEEK!
+          🔥 CORE ACCELERATOR PROTOCOL ACTIVE ACROSS BOTH TIER REWARD LAYERS
         </div>
 
         <div class="card welcome-card">
-          <div class="section-title">Welcome</div>
+          <div class="section-title">Ecosystem Portal</div>
           <div class="welcome-highlight" id="welcomeUser">Welcome User</div>
-          <div class="sub-text">Watch a video for 30 seconds to unlock your reward, then claim once.</div>
+          <div class="sub-text">Each streaming asset accepts 1 task authorization confirmation loop per day.</div>
           
           <div class="kpi-grid">
             <div class="kpi-card">
               <div class="kpi-title">Wallet Balance</div>
-              <div class="kpi-value" id="gridBalance" style="color: #18ff8d;">KSh 0.00</div>
+              <div class="kpi-value" id="gridBalance" style="color: #10b981;">KSh 0.00</div>
             </div>
             <div class="kpi-card">
               <div class="kpi-title">Total Earned</div>
-              <div class="kpi-value" id="gridEarned" style="color: #ffd24d;">KSh 0.00</div>
+              <div class="kpi-value" id="gridEarned" style="color: #3b82f6;">KSh 0.00</div>
             </div>
             <div class="kpi-card">
               <div class="kpi-title">Total Withdrawn</div>
-              <div class="kpi-value" id="gridWithdrawn" style="color: #ff4d4d;">KSh 0.00</div>
+              <div class="kpi-value" id="gridWithdrawn" style="color: #ef4444;">KSh 0.00</div>
             </div>
             <div class="kpi-card">
               <div class="kpi-title">Stats Summary</div>
               <div class="kpi-value" style="font-size: 13px; line-height: 1.4;">
-                🎬 Videos: <span id="homeVideos" style="font-weight: 700; color: #ffd24d;">0</span><br>
-                👥 Referrals: <span id="homeRefs" style="font-weight: 700; color: #ffd24d;">0</span>
+                🎬 Videos Checked: <span id="homeVideos" style="font-weight: 700; color: #fff;">0</span><br>
+                👥 Network Assets: <span id="homeRefs" style="font-weight: 700; color: #fff;">0</span>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Interactive Microtasks & Mini Games Section -->
+        <div class="card video-card-white" id="gamesCardBlock">
+          <div class="section-title" style="color: #3b82f6; font-size: 20px;">🎮 Interactive Entertainment Hub</div>
+          <p class="sub-text" style="color: #555; margin-bottom: 12px; font-size: 13px;">Complete authorized actions below to distribute premium <b>KSh 3.00 rewards</b> dynamically.</p>
+          
+          <!-- Daily Spin Wheel Container -->
+          <div id="gameSpinWheelModule" class="mini-game-box" style="display:none; padding-top: 55px;">
+            <h4 style="color:#1e293b; text-align: center; margin-bottom: 10px;">🎯 Daily Lucky Spin Wheel</h4>
+            <div class="wheel-pointer"></div>
+            <div id="spinWheelVisual" class="wheel-container">
+              <div class="wheel-segment-label" style="top:0; left:0; transform: rotate(45deg); text-align: right;">0Ksh</div>
+              <div class="wheel-segment-label" style="top:0; right:0; transform: rotate(135deg); text-align: right;">1Ksh</div>
+              <div class="wheel-segment-label" style="bottom:0; right:0; transform: rotate(225deg); text-align: right;">2Ksh</div>
+              <div class="wheel-segment-label" style="bottom:0; left:0; transform: rotate(315deg); text-align: right;">3Ksh</div>
+            </div>
+            <button class="btn btn-blue" id="spinWheelActionBtn" onclick="playDailySpinWheelGame()">Trigger Matrix Rotation</button>
+          </div>
+
+          <!-- Higher or Lower Game Container -->
+          <div id="gameHigherLowerModule" class="mini-game-box" style="display:none;">
+            <h4 style="color:#1e293b;">🃏 Higher or Lower Challenge</h4>
+            <p style="font-size:13px; color:#475569; margin:6px 0;">Guess if the next secret structural number (1-100) will be higher or lower.</p>
+            <div style="font-size:24px; font-weight:800; color:#3b82f6; text-align:center; margin:10px 0;" id="hlDisplayValue">Base Pivot: 50</div>
+            <div style="display:flex; gap:10px;">
+              <button class="btn btn-blue" style="margin-top:0;" onclick="playHigherLowerGame('higher')">▲ Higher</button>
+              <button class="btn btn-red-close" style="margin-top:0;" onclick="playHigherLowerGame('lower')">▼ Lower</button>
+            </div>
+          </div>
+
+          <!-- Memory Match Game Container -->
+          <div id="gameMemoryMatchModule" class="mini-game-box" style="display:none;">
+            <h4 style="color:#1e293b;">🧠 Token Grid Memory Match</h4>
+            <p style="font-size:13px; color:#475569; margin:4px 0;">Find matching hidden structural pairs underneath the sequence matrix layout.</p>
+            <div id="memoryCardsGridContainer" class="memory-grid"></div>
+          </div>
+        </div>
+
+        <div class="card video-card-white" id="triviaCardBlock">
+          <div class="section-title" style="color: #3b82f6; font-size: 20px;">🧠 Premium Trivia Microtask</div>
+          <p class="sub-text" style="color: #555; margin-bottom: 12px; font-size: 13px;">Complete each active deployment challenge below to secure an instant <b>KSh 5.00 contract credit</b> added directly into your balance asset matrix.</p>
+          <div id="triviaModuleContainer"></div>
+        </div>
+
         <div class="card video-card-white">
-          <div class="section-title">Featured Video</div>
+          <div class="section-title">Featured Video Stream Asset</div>
           <iframe id="videoFrame" src="https://www.youtube.com/embed/-3LBrIc3UiA" allowfullscreen></iframe>
           <div class="video-meta" id="videoNumber">Video 1 of 4</div>
-          <div id="status">Watch for 30 seconds to unlock your reward.</div>
+          <div id="status">Maintain persistent active streams for 30 seconds to lock down rewards.</div>
           <div class="always-row" style="display: flex; gap: 14px; margin-top: 10px;">
-            <button id="claimBtn" class="btn btn-gold" onclick="claimReward()" disabled>Claim Reward</button>
+            <button id="claimBtn" class="btn btn-goldish" onclick="claimReward()" disabled>Claim Reward</button>
             <button class="btn btn-blue" onclick="nextVideo()">Next Video</button>
           </div>
         </div>
+
       </div>
 
       <div id="walletPage" class="page">
@@ -834,13 +1120,25 @@
           <div class="sub-text">Your segmented earnings appear below.</div>
           
           <div style="margin-bottom: 20px; background:rgba(255,255,255,0.05); padding:15px; border-radius:12px;">
-            <div style="color: #ffd24d; font-weight: 700; font-size:13px;">🎬 VIDEO WATCH WALLET</div>
+            <div style="color: #3b82f6; font-weight: 700; font-size:13px;">🎬 VIDEO WATCH & TRIVIA WALLET</div>
             <div class="wallet-value" id="walletVideoBalance">KSh 0.00</div>
           </div>
           
           <div style="background:rgba(255,255,255,0.05); padding:15px; border-radius:12px;">
-            <div style="color: #ffd24d; font-weight: 700; font-size:13px;">👥 REFERRAL WALLET</div>
+            <div style="color: #3b82f6; font-weight: 700; font-size:13px;">👥 DECENTRALIZED REFERRAL WALLET</div>
             <div class="wallet-value" id="walletRefBalance">KSh 0.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="chatPage" class="page">
+        <div class="card">
+          <div class="section-title">Support Desk Chat</div>
+          <div class="sub-text">Message the admin console directly. Support replies will arrive directly inside this log canvas.</div>
+          <div class="chat-container" id="userChatBoxLog"></div>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" id="userMessageTextInp" placeholder="Type your message here..." style="margin-bottom: 0;">
+            <button class="btn btn-blue" style="width: auto; margin-top: 0; padding: 0 25px;" onclick="sendUserMessageToAdmin()">Send</button>
           </div>
         </div>
       </div>
@@ -852,8 +1150,8 @@
               <img class="profile-avatar-frame" src="https://i.imgur.com/7D7I6dI.png" alt="avatar">
             </div>
             <h2 id="profileUsernameName">User Profile</h2>
-            <div style="margin-top: 8px;">
-              <span class="badge badge-approved">✓ Active Account</span>
+            <div style="margin-top: 8px; display: flex; flex-direction: column; align-items: center; gap: 8px;" id="profileStatusBadgeWrapper">
+              <span class="badge badge-approved">✓ Active Node</span>
             </div>
           </div>
 
@@ -864,18 +1162,18 @@
             </div>
             
             <div class="profile-info-widget">
-              <div class="widget-label">Videos Tracked</div>
+              <div class="widget-label">Streams Tracked</div>
               <div class="widget-value" id="profileVideos">0</div>
             </div>
 
             <div class="profile-info-widget profile-info-widget-full">
-              <div class="widget-label">Video Watch Wallet Balance</div>
-              <div class="widget-value-monetary" id="profileVideoBalance" style="color: #2f66e0;">KSh 0.00</div>
+              <div class="widget-label">Video Watch & Trivia Wallet Balance</div>
+              <div class="widget-value-monetary" id="profileVideoBalance" style="color: #3b82f6;">KSh 0.00</div>
             </div>
 
             <div class="profile-info-widget profile-info-widget-full">
               <div class="widget-label">Referral Network Wallet</div>
-              <div class="widget-value-monetary" id="profileRefBalance" style="color: #1fbf63;">KSh 0.00</div>
+              <div class="widget-value-monetary" id="profileRefBalance" style="color: #10b981;">KSh 0.00</div>
             </div>
           </div>
 
@@ -885,11 +1183,11 @@
 
       <div id="referralPage" class="page">
         <div class="card">
-          <div class="section-title">Partnership & Affiliates</div>
-          <div class="sub-text">Scale your income stream by building your organization network. You earn an instantaneous payment contract of <b>KSh 15.00</b> for every user who completes account configuration and passes administrative security audit reviews.</div>
+          <div class="section-title">Partnership & Affiliates Matrix</div>
+          <div class="sub-text">Scale your distribution channel. Level 1 awards <b>KSh 20.00</b> directly. Level 2 awards an additional passive **KSh 10.00** into your network structural wallet upon new user profile code node execution and fee audit verification.</div>
           
           <div style="margin-top: 15px;">
-            <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #ffd24d; letter-spacing: 0.5px;">Your Corporate Asset Link</span>
+            <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #3b82f6; letter-spacing: 0.5px;">Your Corporate Asset Link</span>
             <div class="link-share-container">
               <div id="refLink" class="link-display-field">Generating corporate deployment url...</div>
               <button class="copy-action-btn" onclick="copyReferralLink()">Copy Link</button>
@@ -898,20 +1196,21 @@
         </div>
 
         <div class="card" style="margin-top: 20px;">
-          <div class="section-title" style="font-size: 20px;">👥 Performance Matrix Ledger</div>
-          <div class="sub-text" style="font-size: 13px;">Review your direct invite networks, audit points, and deployment activation milestones.</div>
+          <div class="section-title" style="font-size: 20px;">👥 Referral Network Ledger Matrix</div>
+           <div class="sub-text" style="font-size: 13px;">Review the direct identities and network tiers associated with your unique account.</div>
           <div class="table-responsive">
             <table>
               <thead>
                 <tr>
-                  <th>Partner Identity</th>
-                  <th>Onboarding Date</th>
-                  <th>Verification Status</th>
+                  <th>Identity Label</th>
+                  <th>Mobile Link</th>
+                  <th>Matrix Layer</th>
+                  <th>Node Status</th>
                 </tr>
               </thead>
               <tbody id="userReferralNetworkTable">
                 <tr>
-                  <td colspan="3" style="text-align:center; color:#aaa; padding: 15px;">No network data recorded.</td>
+                  <td colspan="4" style="text-align:center; color:#aaa; padding: 15px;">No structural matrix network members captured.</td>
                 </tr>
               </tbody>
             </table>
@@ -923,21 +1222,21 @@
         <div class="card">
           <div class="section-title">Withdraw Funds</div>
           
-          <div class="sub-text" style="background: rgba(247, 199, 68, 0.1); border-left: 4px solid #f7c744; padding: 12px; border-radius: 4px; margin-bottom: 20px;">
+          <div class="sub-text" style="background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6; padding: 12px; border-radius: 4px; margin-bottom: 20px;">
             📌 <b>Minimum Withdrawal Thresholds:</b><br>
-            • Video Watch Wallet: <b>KSh 250</b><br>
+            • Video Watch/Trivia Wallet: <b>KSh 250</b><br>
             • Referral earnings: <b>KSh 100</b>
           </div>
           
-          <label style="display:block; margin-bottom: 6px; font-weight: 700; color: #ffd24d; font-size:13px;">SELECT WALLET BALANCE SOURCE:</label>
+          <label style="display:block; margin-bottom: 6px; font-weight: 700; color: #3b82f6; font-size:13px;">SELECT WALLET BALANCE SOURCE:</label>
           <select id="walletSource">
-            <option value="video">Video Watch Balance (Min: KSh 250)</option>
+            <option value="video">Video Watch / Trivia Balance (Min: KSh 250)</option>
             <option value="referral">Referral Balance (Min: KSh 100)</option>
           </select>
 
           <input type="text" id="phone" placeholder="Enter M-Pesa Number">
           <input type="number" id="amount" placeholder="Enter amount">
-          <button class="btn btn-blue" onclick="requestWithdraw()">Request Withdrawal</button>
+          <button class="btn btn-goldish" onclick="requestWithdraw()">Request Withdrawal</button>
           <div id="withdrawMessage" class="small-note"></div>
         </div>
       </div>
@@ -949,9 +1248,13 @@
         <span class="nav-icon">🏠</span>
         <span>Home</span>
       </button>
-      <button onclick="showPage('walletPage', this)">
+      <button id="navWalletBtn" onclick="showPage('walletPage', this)">
         <span class="nav-icon">👛</span>
         <span>Wallet</span>
+      </button>
+      <button id="navChatBtn" onclick="showPage('chatPage', this); populateUserMessagesLog();">
+        <span class="nav-icon">💬</span>
+        <span>Support</span>
       </button>
       <button onclick="openProfile(this)">
         <span class="nav-icon">👤</span>
@@ -968,39 +1271,69 @@
     </nav>
   </div>
   <script>
-    // ⚠️ LIVE INSTALLED GOOGLE WEB APP DEPLOYMENT BACKEND URL
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxF0FMTcNXovLMOXNgOKkvdJPZxD1N3tRsfE5mtfER89SR4PrZIjQyKkxUCLcwcyg5x/exec";
 
     let users = [];
     let withdrawals = [];
+    let supportMessages = [];
+    
+    // Admin customizable micro-feature structures
+    let platformGameSwitches = {
+      spinWheel: "active",
+      higherLower: "active",
+      memoryMatch: "active"
+    };
 
-    const videos = [
-      { id: "vid1", title: "Video 1", url: "https://www.youtube.com/embed/-3LBrIc3UiA", reward: 20 },
-      { id: "vid2", title: "Video 2", url: "https://www.youtube.com/embed/aqz-KE-bpKQ", reward: 20 },
-      { id: "vid3", title: "Video 3", url: "https://www.youtube.com/embed/dQw4w9WgXcQ", reward: 20 },
-      { id: "vid4", title: "Video 4", url: "https://www.youtube.com/embed/jNQXAC9IVRw", reward: 20 }
+    let triviaQuestions = [
+      { id: "q1", question: "Which digital engine acts as the primary layout renderer for web applications?", options: ["HTML", "M-Pesa API", "C++ compiler", "Python runtime"], correct: 0 },
+      { id: "q2", question: "What is the official operational capital city of Kenya?", options: ["Mombasa", "Nairobi", "Kisumu", "Nakuru"], correct: 1 },
+      { id: "q3", question: "What is the standard minimum threshold required to initiate Video Watch withdrawals?", options: ["KSh 100", "KSh 150", "KSh 250", "KSh 500"], correct: 2 },
+      { id: "q4", question: "Which protocol secures transaction data transfer pipelines across online dashboards?", options: ["FTP", "HTTPS", "SMTP", "POP3"], correct: 1 }
+    ];
+
+    let videos = [
+      { id: "vid1", title: "Corporate Overview Video 1", url: "https://www.youtube.com/embed/-3LBrIc3UiA", reward: 5 },
+      { id: "vid2", title: "System Operational Video 2", url: "https://www.youtube.com/embed/aqz-KE-bpKQ", reward: 5 },
+      { id: "vid3", title: "Technical Stream Video 3", url: "https://www.youtube.com/embed/dQw4w9WgXcQ", reward: 5 },
+      { id: "vid4", title: "Network Growth Video 4", url: "https://www.youtube.com/embed/jNQXAC9IVRw", reward: 5 }
     ];
 
     let currentVideo = 0;
     let rewardTimer = null;
     let countdownInterval = null;
 
+    // Local Variables tracking unique game states during layout session
+    let higherLowerCurrentPivot = 50;
+    let memorySelectedCards = [];
+
     function loadLocalCache() {
       const cachedUsers = localStorage.getItem("cached_users");
       const cachedWithdrawals = localStorage.getItem("cached_withdrawals");
+      const cachedTrivia = localStorage.getItem("cached_global_trivia");
+      const cachedVideos = localStorage.getItem("cached_global_videos");
+      const cachedSwitches = localStorage.getItem("cached_game_switches");
+      const cachedMessages = localStorage.getItem("cached_support_messages");
       if (cachedUsers) users = JSON.parse(cachedUsers);
       if (cachedWithdrawals) withdrawals = JSON.parse(cachedWithdrawals);
+      if (cachedTrivia) triviaQuestions = JSON.parse(cachedTrivia);
+      if (cachedVideos) videos = JSON.parse(cachedVideos);
+      if (cachedSwitches) platformGameSwitches = JSON.parse(cachedSwitches);
+      if (cachedMessages) supportMessages = JSON.parse(cachedMessages);
     }
 
     function saveLocalCache() {
       localStorage.setItem("cached_users", JSON.stringify(users));
       localStorage.setItem("cached_withdrawals", JSON.stringify(withdrawals));
+      localStorage.setItem("cached_global_trivia", JSON.stringify(triviaQuestions));
+      localStorage.setItem("cached_global_videos", JSON.stringify(videos));
+      localStorage.setItem("cached_game_switches", JSON.stringify(platformGameSwitches));
+      localStorage.setItem("cached_support_messages", JSON.stringify(supportMessages));
     }
 
     function copyReferralLink() {
       const linkText = document.getElementById("refLink").innerText;
       navigator.clipboard.writeText(linkText).then(() => {
-        alert("Success! Affiliate deployment link copied to clipboard.");
+        alert("Corporate access node shortcut copied to transaction link buffer.");
       }).catch(err => {
         console.error("Could not copy asset link text: ", err);
       });
@@ -1011,8 +1344,8 @@
       const sub = document.getElementById("loginLoadingSub");
       
       if (title && sub) {
-        title.innerText = "🔄 Connecting...";
-        sub.innerText = "Establishing secure stream with database engines...";
+        title.innerText = "🔄 Processing Sync...";
+        sub.innerText = "Establishing structural validation sequence with central matrix backend...";
       }
 
       try {
@@ -1024,6 +1357,10 @@
         if (result.status === "success") {
           users = result.users || users;
           withdrawals = result.withdrawals || withdrawals;
+          supportMessages = result.supportMessages || supportMessages;
+          if(result.triviaQuestions) triviaQuestions = result.triviaQuestions;
+          if(result.videos) videos = result.videos;
+          if(result.gameSwitches) platformGameSwitches = result.gameSwitches;
           saveLocalCache();
           console.log("Database initialized from cloud backend.");
         }
@@ -1031,8 +1368,8 @@
         console.error("Cloud engine connection error, using local cache backup:", e);
       } finally {
         if (title && sub) {
-          title.innerText = "Login";
-          sub.innerText = "Enter your M-Pesa mobile number to sign in.";
+          title.innerText = "Sign In";
+          sub.innerText = "Enter verification credentials below to access your account matrix.";
         }
       }
     }
@@ -1045,7 +1382,11 @@
           body: JSON.stringify({
             action: "syncAll",
             users: users,
-            withdrawals: withdrawals
+            withdrawals: withdrawals,
+            supportMessages: supportMessages,
+            triviaQuestions: triviaQuestions,
+            videos: videos,
+            gameSwitches: platformGameSwitches
           })
         });
         console.log("Cloud database synchronized.");
@@ -1090,6 +1431,11 @@
       } else {
         const user = users.find(u => String(u.phone).trim() === String(loggedPhone).trim());
         if (user) {
+          if(user.accountStatus === "Suspended") {
+            alert("This account structure has been locked by network administrators.");
+            logout();
+            return;
+          }
           document.getElementById("loginPage").style.display = "none";
           if (user.accountStatus === "Pending Approval") {
             document.getElementById("pendingActivationPage").style.display = "block";
@@ -1099,6 +1445,8 @@
             document.getElementById("dashboard").style.display = "block";
             document.getElementById("headerLogoutBtn").style.display = "block";
             updateUI();
+            renderTriviaChallengeBlocks();
+            evaluateInteractiveGamesActivation();
             loadVideo();
             showPage("homePage", document.getElementById("navHomeBtn"));
           }
@@ -1110,12 +1458,12 @@
       const ticker = document.getElementById("livePayoutTicker");
       const phonePrefixes = ["0712", "0722", "0701", "0754", "0790", "0741", "0733"];
       const phrases = [
-        "withdrew KSh 300 to M-Pesa.",
-        "withdrew KSh 500 to M-Pesa.",
-        "earned KSh 15 from a new profile referral activation.",
-        "withdrew KSh 260 from Video Wallet.",
-        "earned KSh 20 watching Featured Video.",
-        "withdrew KSh 150 to M-Pesa."
+        "withdrew KSh 300 via M-Pesa network terminal.",
+        "withdrew KSh 500 securely down to personal wallet.",
+        "gained Tier-1 KSh 20.00 contract fee from direct referral processing.",
+        "gained Tier-2 KSh 10.00 split verification bonus asset.",
+        "unlocked a contract video stream value allocation.",
+        "payout threshold checked successfully."
       ];
 
       function generateBatch() {
@@ -1123,7 +1471,7 @@
         for (let i = 0; i < 5; i++) {
           let randomPhone = phonePrefixes[Math.floor(Math.random() * phonePrefixes.length)] + "***" + Math.floor(100 + Math.random() * 900);
           let randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-          stringArray.push(`🎉 User ${randomPhone} ${randomPhrase}`);
+          stringArray.push(`⚡ Node ${randomPhone} ${randomPhrase}`);
         }
         ticker.innerHTML = stringArray.join(" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ");
       }
@@ -1151,23 +1499,24 @@
       const regBtn = document.getElementById("regSubmitBtn");
 
       if(usernameInput === "" || phoneInput === "" || passwordInput === "" || confirmPasswordInput === ""){
-        alert("Please fill in all fields.");
+        alert("Please map all structural user variables.");
         return;
       }
       if(phoneInput.toLowerCase() === "admin") {
-        alert("Invalid mobile address.");
+        alert("Invalid phone configuration sequence.");
         return;
       }
       if(passwordInput !== confirmPasswordInput) {
-        alert("Passwords do not match!");
+        alert("Password mismatched.");
         return;
       }
       if(users.find(u => String(u.phone).trim() === phoneInput)){
-        alert("Number already registered.");
+        alert("Mobile tracking signature already associated with an active node.");
         return;
       }
 
       const referrer = localStorage.getItem("pendingReferrer") || "";
+      const currentTimestamp = new Date().toLocaleString();
 
       const newUser = {
         displayName: usernameInput,
@@ -1179,15 +1528,17 @@
         videoBalance: 0,
         referralBalance: 0,
         videosWatched: 0,
-        unlockedVideos: [],
+        unlockedVideos: {}, 
+        triviaAnswered: [], 
         referredBy: referrer,
-        joined: new Date().toLocaleDateString()
+        joined: currentTimestamp,
+        lastSpinTimestamp: 0
       };
       
       users.push(newUser);
       saveLocalCache();
       
-      regBtn.innerText = "Saving to Server...";
+      regBtn.innerText = "Syncing Node...";
       regBtn.disabled = true;
 
       await saveToGoogleDatabase();
@@ -1196,10 +1547,10 @@
       regBtn.disabled = false;
 
       if (referrer) {
-        alert("Account setup complete! Your referrer will receive KSh 15 once your account is verified.");
+        alert("Account setup complete! Verification will distribute corresponding layer matrix allocations to structural paths.");
         localStorage.removeItem("pendingReferrer");
       } else {
-        alert("Registration Successful! Please log in to submit your verification proof.");
+        alert("Data registration successful. Authenticate to establish proof structure.");
       }
       closeRegisterModal();
     }
@@ -1209,11 +1560,10 @@
       const passwordInput = document.getElementById("loginPassword").value.trim();
 
       if(phoneInput === "" || passwordInput === "") {
-        alert("Please fill out all fields.");
+        alert("Please complete authorization coordinates.");
         return;
       }
-
-      if(phoneInput.toLowerCase() === "admin" && passwordInput === "admin123") {
+      if(phoneInput.toLowerCase() === "admin" && passwordInput === "Lumbacy123456789") {
         localStorage.setItem("currentUserPhone", "admin");
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("adminDashboard").style.display = "block";
@@ -1223,7 +1573,7 @@
       }
 
       const loginBtn = document.getElementById("loginSubmitBtn");
-      loginBtn.innerText = "Verifying...";
+      loginBtn.innerText = "Verifying Signatures...";
       loginBtn.disabled = true;
       
       await loadDataFromGoogle();
@@ -1234,7 +1584,12 @@
       const user = users.find(u => String(u.phone).trim() === phoneInput && String(u.password).trim() === passwordInput);
 
       if(!user){
-        alert("Wrong credentials or user does not exist.");
+        alert("Incorrect verification sequence or invalid reference point.");
+        return;
+      }
+
+      if(user.accountStatus === "Suspended") {
+        alert("This node remains detached from global access maps.");
         return;
       }
 
@@ -1249,11 +1604,11 @@
       const submitBtn = document.getElementById("submitMpesaBtn");
 
       if (code === "" && (!fileInput.files || fileInput.files.length === 0)) {
-        alert("Please provide proof: either type an M-Pesa code OR upload a screenshot receipt image.");
+        alert("Provide transaction code parameters or digital document arrays.");
         return;
       }
 
-      submitBtn.innerText = "Uploading to Cloud...";
+      submitBtn.innerText = "Uploading payload...";
       submitBtn.disabled = true;
 
       if (code !== "") user.mpesaCode = code;
@@ -1267,7 +1622,7 @@
           submitBtn.innerText = "Submit Payment Proof";
           submitBtn.disabled = false;
           updateActivationUI();
-          alert("Payment screenshot receipt uploaded successfully to server!");
+          alert("Data structural bundle locked and uploaded successfully.");
         }
         reader.readAsDataURL(file);
       } else {
@@ -1276,24 +1631,41 @@
           submitBtn.innerText = "Submit Payment Proof";
           submitBtn.disabled = false;
           updateActivationUI();
-          alert("Code submitted for review!");
+          alert("Audit metrics locked for processing review.");
         }, 50);
       }
     }
 
+    function payWithPaystack() {
+    let handler = PaystackPop.setup({
+        key: 'pk_test_9a784a4c613dd5480081993e32754f78f0f09c09',
+        email: 'user@growthmint.com',
+        amount: 5000, // 50 KSh
+        currency: 'KES',
+        channels: ['mobile_money'],
+        callback: function(response) {
+            alert('Payment successful! Reference: ' + response.reference);
+        },
+        onClose: function() {
+            alert('Payment window closed.');
+        }
+    });
+    handler.openIframe();
+   }
+    
     function updateActivationUI() {
       const user = getCurrentUser();
       const msgDiv = document.getElementById("activationStatusMsg");
       if(!user) return;
       
       if(user.mpesaReceiptImg && user.mpesaCode) {
-        msgDiv.innerHTML = `Status: <span style="color:#ffd24d;">Code (${user.mpesaCode}) and Image proof pending verification.</span>`;
+        msgDiv.innerHTML = `Status: <span style="color:#3b82f6;">Code (${user.mpesaCode}) & File structural payload pending verification.</span>`;
       } else if (user.mpesaReceiptImg) {
-        msgDiv.innerHTML = `Status: <span style="color:#ffd24d;">Receipt image file uploaded pending verification.</span>`;
+        msgDiv.innerHTML = `Status: <span style="color:#3b82f6;">Receipt capture array logged. Waiting system audit approval loops.</span>`;
       } else if(user.mpesaCode) {
-        msgDiv.innerHTML = `Status: <span style="color:#ffd24d;">Code (${user.mpesaCode}) pending verification.</span>`;
+        msgDiv.innerHTML = `Status: <span style="color:#3b82f6;">Sequence signature (${user.mpesaCode}) under systematic analysis.</span>`;
       } else {
-        msgDiv.innerHTML = `Status: <span style="color:#ff4d4d;">Waiting for code entry or image upload...</span>`;
+        msgDiv.innerHTML = `Status: <span style="color:#ef4444;">Awaiting 50 KSh compliance parameters.</span>`;
       }
     }
 
@@ -1327,13 +1699,22 @@
       
       await loadDataFromGoogle();
       loadAdminData();
+      if(pageId === "adminTrivia") renderAdminTriviaForms();
+      if(pageId === "adminVideos") renderAdminVideoForms();
+      if(pageId === "adminMessages") renderAdminMessagesList();
+      if(pageId === "adminGames") {
+        document.getElementById("adminToggleSpinWheel").value = platformGameSwitches.spinWheel || "active";
+        document.getElementById("adminToggleHigherLower").value = platformGameSwitches.higherLower || "active";
+        document.getElementById("adminToggleMemoryMatch").value = platformGameSwitches.memoryMatch || "active";
+      }
     }
 
     function updateUI(){
       const user = getCurrentUser();
       if(!user) return;
 
-      if(!user.unlockedVideos) user.unlockedVideos = [];
+      if(!user.unlockedVideos || Array.isArray(user.unlockedVideos)) user.unlockedVideos = {};
+      if(!user.triviaAnswered) user.triviaAnswered = [];
 
       const walletTotalBalance = Number(user.videoBalance || 0) + Number(user.referralBalance || 0);
       
@@ -1347,14 +1728,24 @@
 
       const totalEarnedCalculated = walletTotalBalance + approvedWithdraws + pendingWithdraws;
 
-      document.getElementById("welcomeUser").innerText = "Welcome " + (user.displayName || "User") + " (" + user.phone + ")";
+      document.getElementById("welcomeUser").innerText = "Operator: " + (user.displayName || "Node") + " [" + user.phone + "]";
       document.getElementById("gridBalance").innerText = "KSh " + walletTotalBalance.toFixed(2);
       document.getElementById("gridEarned").innerText = "KSh " + totalEarnedCalculated.toFixed(2);
       document.getElementById("gridWithdrawn").innerText = "KSh " + approvedWithdraws.toFixed(2);
       document.getElementById("homeVideos").innerText = user.videosWatched || 0;
       
-      const dynamicRefsCount = users.filter(u => String(u.referredBy).trim() === String(user.phone).trim()).length;
-      document.getElementById("homeRefs").innerText = dynamicRefsCount;
+      let allDownlinesCount = 0;
+      users.forEach(u1 => {
+        if(String(u1.referredBy).trim() === String(user.phone).trim()) {
+          allDownlinesCount++; 
+          users.forEach(u2 => {
+            if(String(u2.referredBy).trim() === String(u1.phone).trim()) {
+              allDownlinesCount++; 
+            }
+          });
+        }
+      });
+      document.getElementById("homeRefs").innerText = allDownlinesCount;
 
       document.getElementById("walletVideoBalance").innerText = "KSh " + Number(user.videoBalance || 0).toFixed(2);
       document.getElementById("walletRefBalance").innerText = "KSh " + Number(user.referralBalance || 0).toFixed(2);
@@ -1365,8 +1756,412 @@
       document.getElementById("profileRefBalance").innerText = "KSh " + Number(user.referralBalance || 0).toFixed(2);
       document.getElementById("profileVideos").innerText = user.videosWatched || 0;
 
-      const githubAddress = "https://ricky5426.github.io/MAKE-MONEY-ONLINE/"; 
-      document.getElementById("refLink").innerText = githubAddress + "?ref=" + encodeURIComponent(user.phone);
+      const profileWrapper = document.getElementById("profileStatusBadgeWrapper");
+      if(profileWrapper) {
+        let activeLightHtml = `<div class="active-status-light"><span class="status-dot"></span> Active Session Map</div>`;
+        profileWrapper.innerHTML = user.accountStatus === "Activated" 
+          ? `<span class="badge badge-approved">✓ Active Account</span>` + activeLightHtml
+          : `<span class="badge badge-suspended">⚠️ System Suspended</span>`;
+      }
+
+      const deploymentAddress = "https://ricky5426.github.io/GROWTH-MINT/"; 
+      document.getElementById("refLink").innerText = deploymentAddress + "?ref=" + encodeURIComponent(user.phone);
+    }
+
+    function renderTriviaChallengeBlocks() {
+      const container = document.getElementById("triviaModuleContainer");
+      const user = getCurrentUser();
+      if(!container || !user) return;
+
+      if(!user.triviaAnswered) user.triviaAnswered = [];
+      container.innerHTML = "";
+
+      triviaQuestions.forEach((q, idx) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "trivia-item";
+        
+        const isAnswered = user.triviaAnswered.includes(q.id);
+        
+        let headerText = `<div class="trivia-q-text">Module #${idx + 1}: ${q.question}</div>`;
+        let optionsHtml = `<div class="trivia-options-grid">`;
+        
+        q.options.forEach((opt, optIdx) => {
+          optionsHtml += `<button class="trivia-opt-btn" ${isAnswered ? "disabled" : ""} onclick="submitUserTriviaAnswer('${q.id}', ${optIdx}, this)">${opt}</button>`;
+        });
+        optionsHtml += `</div>`;
+
+        let statusNotice = isAnswered 
+          ? `<div style="margin-top: 8px; font-size:12px; color:#3b82f6; font-weight:700;">✓ Sequence Verification Locked</div>`
+          : ``;
+
+        itemDiv.innerHTML = headerText + optionsHtml + statusNotice;
+        container.appendChild(itemDiv);
+      });
+    }
+
+    async function submitUserTriviaAnswer(questionId, selectedIdx, element) {
+      const user = getCurrentUser();
+      if(!user) return;
+      if(!user.triviaAnswered) user.triviaAnswered = [];
+
+      if(user.triviaAnswered.includes(questionId)) {
+        alert("Sequence path already captured.");
+        return;
+      }
+
+      const qObj = triviaQuestions.find(q => q.id === questionId);
+      if(!qObj) return;
+
+      user.triviaAnswered.push(questionId);
+
+      if(selectedIdx === qObj.correct) {
+        user.videoBalance = Number(user.videoBalance || 0) + 5;
+        alert("Correct resolution. KSh 5.00 mapped to ledger array.");
+      } else {
+        alert("Incorrect resolution choice. Path terminated and locked.");
+      }
+
+      await saveToGoogleDatabase();
+      updateUI();
+      renderTriviaChallengeBlocks();
+    }
+
+    // Interactive Core Gamification Framework Engine Implementation
+    function evaluateInteractiveGamesActivation() {
+      const block = document.getElementById("gamesCardBlock");
+      const sw = document.getElementById("gameSpinWheelModule");
+      const hl = document.getElementById("gameHigherLowerModule");
+      const mm = document.getElementById("gameMemoryMatchModule");
+
+      let anyGameActive = false;
+
+      if(platformGameSwitches.spinWheel === "active") { sw.style.display = "block"; anyGameActive = true; } else { sw.style.display = "none"; }
+      if(platformGameSwitches.higherLower === "active") { hl.style.display = "block"; anyGameActive = true; } else { hl.style.display = "none"; }
+      if(platformGameSwitches.memoryMatch === "active") { mm.style.display = "block"; anyGameActive = true; initMemoryMatchGrid(); } else { mm.style.display = "none"; }
+
+      block.style.display = anyGameActive ? "block" : "none";
+    }
+
+    async function processGameRewardPayout(gameTitle, customAmount = 3) {
+      const user = getCurrentUser();
+      if(!user) return;
+      user.videoBalance = Number(user.videoBalance || 0) + customAmount;
+      await saveToGoogleDatabase();
+      updateUI();
+      alert(`🎉 Victory! ${customAmount} KSh credited for completing the ${gameTitle}!`);
+    }
+
+    function playDailySpinWheelGame() {
+      const user = getCurrentUser();
+      if (!user) return;
+
+      const now = Date.now();
+      const oneDayMs = 24 * 60 * 60 * 1000;
+      if (user.lastSpinTimestamp && (now - user.lastSpinTimestamp < oneDayMs)) {
+        const remainingMs = oneDayMs - (now - user.lastSpinTimestamp);
+        const hours = Math.floor(remainingMs / (60 * 60 * 1000));
+        const minutes = Math.floor((remainingMs % (60 * 60 * 1000)) / (60 * 1000));
+        alert(`You can only spin the wheel once a day! Please wait ${hours}h ${minutes}m remaining.`);
+        return;
+      }
+
+      const wheel = document.getElementById("spinWheelVisual");
+      const btn = document.getElementById("spinWheelActionBtn");
+      btn.disabled = true;
+
+      const rewardsMap = [0, 1, 2, 3];
+      const randomIndex = Math.floor(Math.random() * rewardsMap.length);
+      const chosenReward = rewardsMap[randomIndex];
+
+      // Base random degrees + alignment rotation vectors to snap segments at the top pointer safely
+      const targetDegreeBase = randomIndex * 90; 
+      const randomDegrees = (3600 - targetDegreeBase) + 45; 
+      wheel.style.transform = `rotate(${randomDegrees}deg)`;
+
+      user.lastSpinTimestamp = now;
+
+      setTimeout(async () => {
+        btn.disabled = false;
+        wheel.style.transform = `rotate(${randomDegrees % 360}deg)`;
+        await processGameRewardPayout("Daily Spin Wheel", chosenReward);
+      }, 3000);
+    }
+
+    function playHigherLowerGame(prediction) {
+      const nextSecretValue = Math.floor(Math.random() * 100) + 1;
+      let won = false;
+
+      if(prediction === "higher" && nextSecretValue >= higherLowerCurrentPivot) won = true;
+      if(prediction === "lower" && nextSecretValue <= higherLowerCurrentPivot) won = true;
+
+      alert(`Secret Number discovered: ${nextSecretValue} (Previous: ${higherLowerCurrentPivot})`);
+      higherLowerCurrentPivot = Math.floor(Math.random() * 80) + 10;
+      document.getElementById("hlDisplayValue").innerText = `Base Pivot: ${higherLowerCurrentPivot}`;
+
+      if(won) {
+        processGameRewardPayout("Higher or Lower Game");
+      } else {
+        alert("Incorrect estimation vector. Better luck next attempt!");
+      }
+    }
+
+    function initMemoryMatchGrid() {
+      const grid = document.getElementById("memoryCardsGridContainer");
+      if(!grid) return;
+      grid.innerHTML = "";
+      memorySelectedCards = [];
+
+      let items = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D'];
+      items.sort(() => Math.random() - 0.5);
+
+      items.forEach((symbol, index) => {
+        const card = document.createElement("div");
+        card.className = "memory-card-element";
+        card.dataset.symbol = symbol;
+        card.dataset.index = index;
+        card.innerText = "?";
+        card.onclick = () => handleMemoryCardSelection(card);
+        grid.appendChild(card);
+      });
+    }
+
+    function handleMemoryCardSelection(cardElement) {
+      if(cardElement.classList.contains("flipped") || memorySelectedCards.length >= 2) return;
+
+      cardElement.classList.add("flipped");
+      cardElement.innerText = cardElement.dataset.symbol;
+      memorySelectedCards.push(cardElement);
+
+      if(memorySelectedCards.length === 2) {
+        const c1 = memorySelectedCards[0];
+        const c2 = memorySelectedCards[1];
+
+        if(c1.dataset.symbol === c2.dataset.symbol) {
+          memorySelectedCards = [];
+          // Assess if layout completed grid entirely
+          const totalFlipped = document.querySelectorAll(".memory-card-element.flipped").length;
+          if(totalFlipped === 8) {
+            setTimeout(() => {
+              processGameRewardPayout("Memory Match Matrix");
+              initMemoryMatchGrid();
+            }, 50);
+          }
+        } else {
+          setTimeout(() => {
+            c1.classList.remove("flipped");
+            c1.innerText = "?";
+            c2.classList.remove("flipped");
+            c2.innerText = "?";
+            memorySelectedCards = [];
+          }, 1000);
+        }
+      }
+    }
+
+    // Support messenger functions 
+    function populateUserMessagesLog() {
+      const user = getCurrentUser();
+      const logBox = document.getElementById("userChatBoxLog");
+      if(!user || !logBox) return;
+
+      logBox.innerHTML = "";
+      const filtered = supportMessages.filter(m => String(m.userPhone).trim() === String(user.phone).trim());
+
+      if(filtered.length === 0) {
+        logBox.innerHTML = `<div style="text-align:center; font-size:12px; color:#64748b; padding:10px;">No message history recorded. Send a message to the administrator loop below.</div>`;
+        return;
+      }
+
+      filtered.forEach(m => {
+        const b = document.createElement("div");
+        b.className = `chat-bubble ${m.sender}`;
+        b.innerHTML = `<strong>${m.sender === 'user' ? 'You' : 'Admin'}:</strong> ${m.text}<br><span style="font-size:9px; opacity:0.6; display:block; text-align:right; margin-top:3px;">${m.timestamp}</span>`;
+        logBox.appendChild(b);
+      });
+      logBox.scrollTop = logBox.scrollHeight;
+    }
+
+    async function sendUserMessageToAdmin() {
+      const user = getCurrentUser();
+      const inp = document.getElementById("userMessageTextInp");
+      if(!user || !inp || inp.value.trim() === "") return;
+
+      const newMessage = {
+        id: "MSG" + Math.floor(Math.random() * 90000 + 10000),
+        userPhone: user.phone,
+        userName: user.displayName || "Node User",
+        sender: "user",
+        text: inp.value.trim(),
+        timestamp: new Date().toLocaleString()
+      };
+
+      supportMessages.push(newMessage);
+      inp.value = "";
+      populateUserMessagesLog();
+      await saveToGoogleDatabase();
+    }
+
+    function renderAdminMessagesList() {
+      const container = document.getElementById("adminTicketsContainer");
+      if(!container) return;
+      container.innerHTML = "";
+
+      // Group tickets into structured threads indexed by phone configuration keys
+      const threads = {};
+      supportMessages.forEach(m => {
+        if(!threads[m.userPhone]) threads[m.userPhone] = [];
+        threads[m.userPhone].push(m);
+      });
+
+      const keys = Object.keys(threads);
+      if(keys.length === 0) {
+        container.innerHTML = `<p class="sub-text" style="font-style:italic;">No messages received from user matrix nodes yet.</p>`;
+        return;
+      }
+
+      keys.forEach(phone => {
+        const msgList = threads[phone];
+        const lastMsg = msgList[msgList.length - 1];
+        const card = document.createElement("div");
+        card.style.background = "#334155";
+        card.style.padding = "15px";
+        card.style.borderRadius = "12px";
+        card.style.marginBottom = "15px";
+
+        let logHtml = `<div style="max-height:150px; overflow-y:auto; background:#0f172a; border-radius:8px; padding:10px; margin-bottom:10px; display:flex; flex-direction:column; gap:6px;">`;
+        msgList.forEach(m => {
+          logHtml += `<div style="font-size:12px; color:#fff; align-self: ${m.sender === 'user' ? 'flex-start' : 'flex-end'}; background:${m.sender === 'user' ? '#1e293b' : '#3b82f6'}; padding:6px 10px; border-radius:8px;">
+            <strong>${m.sender === 'user' ? 'User' : 'Admin'}:</strong> ${m.text} <span style="font-size:8px; opacity:0.5; margin-left:5px;">${m.timestamp}</span>
+          </div>`;
+        });
+        logHtml += `</div>`;
+
+        card.innerHTML = `
+          <h4 style="color:#3b82f6; margin-bottom:4px;">Node Account: ${lastMsg.userName} (${phone})</h4>
+          ${logHtml}
+          <div style="display:flex; gap:10px;">
+            <input type="text" id="adminReplyInp_${phone}" placeholder="Write admin reply matrix payload..." style="margin-bottom:0; padding:10px;">
+            <button class="btn-green" style="width:auto; padding:0 20px;" onclick="submitAdminReplyMessage('${phone}')">Reply</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    async function submitAdminReplyMessage(phone) {
+      const inp = document.getElementById(`adminReplyInp_${phone}`);
+      if(!inp || inp.value.trim() === "") return;
+
+      const matchedUser = users.find(u => String(u.phone).trim() === String(phone).trim());
+      const name = matchedUser ? matchedUser.displayName : "Node User";
+    
+      const replyObj = {
+        id: "MSG" + Math.floor(Math.random() * 90000 + 10000),
+        userPhone: phone,
+        userName: name,
+        sender: "admin",
+        text: inp.value.trim(),
+        timestamp: new Date().toLocaleString()
+      };
+
+      supportMessages.push(replyObj);
+      inp.value = "";
+      renderAdminMessagesList();
+      await saveToGoogleDatabase();
+      alert("Reply broadcast structure pushed downstream successfully.");
+    }
+
+    async function saveAdminGameToggles() {
+      platformGameSwitches.spinWheel = document.getElementById("adminToggleSpinWheel").value;
+      platformGameSwitches.higherLower = document.getElementById("adminToggleHigherLower").value;
+      platformGameSwitches.memoryMatch = document.getElementById("adminToggleMemoryMatch").value;
+
+      await saveToGoogleDatabase();
+      alert("Feature toggles applied and pushed across active user nodes.");
+    }
+
+    function renderAdminVideoForms() {
+      const container = document.getElementById("adminVideoContainer");
+      if(!container) return;
+      container.innerHTML = "";
+
+      videos.forEach((v, idx) => {
+        const item = document.createElement("div");
+        item.style.background = "#334155";
+        item.style.padding = "14px";
+        item.style.borderRadius = "12px";
+        item.style.marginBottom = "14px";
+        item.innerHTML = `
+          <h4 style="color:#3b82f6; margin-bottom:8px;">Stream Asset Slot #${idx + 1} Configuration</h4>
+          <label style="font-weight:700; color:#fff; display:block; font-size:11px;">Video Title Text String:</label>
+          <input type="text" id="adminVidTitle_${idx}" value="${v.title}">
+          <label style="font-weight:700; color:#fff; display:block; font-size:11px; margin-top:4px;">YouTube Embed Link String:</label>
+          <input type="text" id="adminVidUrl_${idx}" value="${v.url}">
+          <label style="font-weight:700; color:#fff; display:block; font-size:11px; margin-top:4px;">Payout Metric Value (KSh):</label>
+          <input type="number" id="adminVidReward_${idx}" value="${v.reward || 5}">
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    async function saveAdminVideoChanges() {
+      videos.forEach((v, idx) => {
+        v.title = document.getElementById(`adminVidTitle_${idx}`).value.trim();
+        v.url = document.getElementById(`adminVidUrl_${idx}`).value.trim();
+        v.reward = Number(document.getElementById(`adminVidReward_${idx}`).value.trim() || 5);
+      });
+
+      await saveToGoogleDatabase();
+      alert("Dynamic streaming configurations deployed across all interface profiles successfully.");
+    }
+
+    function renderAdminTriviaForms() {
+      const container = document.getElementById("adminTriviaFormContainer");
+      if(!container) return;
+      container.innerHTML = "";
+
+      triviaQuestions.forEach((q, idx) => {
+        const item = document.createElement("div");
+        item.style.background = "#334155";
+        item.style.padding = "14px";
+        item.style.borderRadius = "12px";
+        item.style.marginBottom = "14px";
+        item.innerHTML = `
+          <h4 style="color:#3b82f6; margin-bottom:8px;">Question Element Slot #${idx + 1}</h4>
+          <label style="font-weight:700; color:#fff; display:block; font-size:11px;">Question Title Context:</label>
+          <input type="text" id="adminQText_${idx}" value="${q.question}">
+          <label style="font-weight:700; color:#fff; display:block; font-size:11px;">Index Selection Option [0]:</label>
+          <input type="text" id="adminQOpt_${idx}_0" value="${q.options[0]}">
+          <label style="font-weight:700; color:#fff; display:block; font-size:11px;">Index Selection Option [1]:</label>
+          <input type="text" id="adminQOpt_${idx}_1" value="${q.options[1]}">
+          <label style="font-weight:700; color:#fff; display:block; font-size:11px;">Index Selection Option [2]:</label>
+          <input type="text" id="adminQOpt_${idx}_2" value="${q.options[2]}">
+          <label style="font-weight:700; color:#fff; display:block; font-size:11px;">Index Selection Option [3]:</label>
+          <input type="text" id="adminQOpt_${idx}_3" value="${q.options[3]}">
+          <label style="font-weight:700; color:#fff; display:block; font-size:12px; margin-top:6px;">Correct Answer Option Index (0-3):</label>
+          <select id="adminQCorrect_${idx}">
+            <option value="0" ${q.correct === 0 ? "selected" : ""}>Option 0</option>
+            <option value="1" ${q.correct === 1 ? "selected" : ""}>Option 1</option>
+            <option value="2" ${q.correct === 2 ? "selected" : ""}>Option 2</option>
+            <option value="3" ${q.correct === 3 ? "selected" : ""}>Option 3</option>
+          </select>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    async function saveAdminTriviaChanges() {
+      triviaQuestions.forEach((q, idx) => {
+        q.question = document.getElementById(`adminQText_${idx}`).value.trim();
+        q.options[0] = document.getElementById(`adminQOpt_${idx}_0`).value.trim();
+        q.options[1] = document.getElementById(`adminQOpt_${idx}_1`).value.trim();
+        q.options[2] = document.getElementById(`adminQOpt_${idx}_2`).value.trim();
+        q.options[3] = document.getElementById(`adminQOpt_${idx}_3`).value.trim();
+        q.correct = parseInt(document.getElementById(`adminQCorrect_${idx}`).value);
+      });
+
+      await saveToGoogleDatabase();
+      alert("Operational matrix questions locked to storage engines.");
     }
 
     function openProfile(btn = null){
@@ -1385,23 +2180,37 @@
       const networkTableBody = document.getElementById("userReferralNetworkTable");
       if(!user) return;
 
-      const downlines = users.filter(u => String(u.referredBy).trim() === String(user.phone).trim());
       networkTableBody.innerHTML = "";
+      let networkList = [];
 
-      if(downlines.length === 0) {
-        networkTableBody.innerHTML = `<tr><td colspan="3" style="text-align:center; color:#aaa; padding: 15px;">No network data recorded.</td></tr>`;
+      users.forEach(u1 => {
+        if(String(u1.referredBy).trim() === String(user.phone).trim()) {
+          networkList.push({ userObj: u1, level: "Level 1 (Direct)" });
+          
+          users.forEach(u2 => {
+            if(String(u2.referredBy).trim() === String(u1.phone).trim()) {
+              networkList.push({ userObj: u2, level: "Level 2 (Indirect)" });
+            }
+          });
+        }
+      });
+
+      if(networkList.length === 0) {
+        networkTableBody.innerHTML = `<tr><td colspan="4" style="text-align:center; color:#aaa; padding: 15px;">No structural matrix network members captured.</td></tr>`;
         return;
       }
 
-      downlines.forEach(dl => {
+      networkList.forEach(item => {
+        const dl = item.userObj;
         const tr = document.createElement("tr");
         let statusBadge = dl.accountStatus === "Activated" 
           ? `<span class="badge badge-approved" style="font-size:10px; padding:3px 8px;">Active</span>`
-          : `<span class="badge badge-pending" style="font-size:10px; padding:3px 8px;">Pending</span>`;
+          : (dl.accountStatus === "Suspended" ? `<span class="badge badge-suspended" style="font-size:10px; padding:3px 8px;">Suspended</span>` : `<span class="badge badge-pending" style="font-size:10px; padding:3px 8px;">Pending</span>`);
 
         tr.innerHTML = `
-          <td><b>${dl.displayName || "User"}</b><br><span style="font-size:11px; color:#aaa;">${dl.phone}</span></td>
-          <td>${dl.joined || "N/A"}</td>
+          <td><b>${dl.displayName || "Node User"}</b></td>
+          <td><span style="font-size:12px; font-family:monospace; color:#cbd5e1;">${dl.phone}</span></td>
+          <td><span style="font-size:11px; font-weight:700; color:#3b82f6;">${item.level}</span></td>
           <td>${statusBadge}</td>
         `;
         networkTableBody.appendChild(tr);
@@ -1414,7 +2223,8 @@
       document.getElementById("videoNumber").innerText = video.title + " (" + (currentVideo + 1) + " of " + videos.length + ")";
       startRewardTimer();
     }
-       function startRewardTimer(){
+
+    function startRewardTimer(){
       clearTimeout(rewardTimer);
       clearInterval(countdownInterval);
 
@@ -1426,10 +2236,13 @@
       claimBtn.disabled = true;
       if(!user) return;
 
-      let currentUnlocked = Array.isArray(user.unlockedVideos) ? user.unlockedVideos : [];
+      if(!user.unlockedVideos || Array.isArray(user.unlockedVideos)) user.unlockedVideos = {};
 
-      if (currentUnlocked.includes(currentVideoId)) {
-        statusText.innerText = "You have already claimed this video's reward.";
+      const todayDateKey = new Date().toLocaleDateString().replace(/\//g, '-');
+      const trackingCompositeId = `${currentVideoId}_${todayDateKey}`;
+
+      if (user.unlockedVideos[trackingCompositeId]) {
+        statusText.innerText = "This stream asset slot has already been claimed for today. Re-initiates tomorrow.";
         return;
       }
 
@@ -1447,7 +2260,7 @@
 
       rewardTimer = setTimeout(() => {
         claimBtn.disabled = false;
-        statusText.innerText = "Reward unlocked! Click 'Claim Reward' below.";
+        statusText.innerText = "Task complete! Process configuration verification tracking reward loop.";
       }, 30000);
     }
 
@@ -1456,28 +2269,33 @@
       if (!user) return;
 
       const claimBtn = document.getElementById("claimBtn");
-      claimBtn.innerText = "Processing...";
+      claimBtn.innerText = "Locking value...";
       claimBtn.disabled = true;
 
       const video = videos[currentVideo];
-      if (!Array.isArray(user.unlockedVideos)) user.unlockedVideos = [];
+      if (!user.unlockedVideos || Array.isArray(user.unlockedVideos)) user.unlockedVideos = {};
 
-      if (user.unlockedVideos.includes(video.id)) {
-        alert("Already claimed.");
+      const todayDateKey = new Date().toLocaleDateString().replace(/\//g, '-');
+      const trackingCompositeId = `${video.id}_${todayDateKey}`;
+
+      if (user.unlockedVideos[trackingCompositeId]) {
+        alert("Daily loop limits reached on this video token.");
         claimBtn.innerText = "Claim Reward";
         return;
       }
 
-      user.unlockedVideos.push(video.id);
-      user.videoBalance = Number(user.videoBalance || 0) + video.reward;
+      const payoutAmount = video.reward || 5;
+
+      user.unlockedVideos[trackingCompositeId] = true;
+      user.videoBalance = Number(user.videoBalance || 0) + payoutAmount;
       user.videosWatched = Number(user.videosWatched || 0) + 1;
 
       await saveToGoogleDatabase();
       updateUI();
       
       claimBtn.innerText = "Claim Reward";
-      document.getElementById("status").innerText = `Claimed KSh ${video.reward}!`;
-      alert(`KSh ${video.reward} added!`);
+      document.getElementById("status").innerText = `Claimed KSh ${payoutAmount}!`;
+      alert(`Asset transaction locked! KSh ${payoutAmount} committed to your ledger balance vector.`);
     }
 
     function nextVideo() {
@@ -1495,31 +2313,31 @@
       const msgDiv = document.getElementById("withdrawMessage");
 
       if (!phone || !amount) {
-        alert("Please enter a valid phone number and amount.");
+        alert("Please map necessary target parameters.");
         return;
       }
       if (amount <= 0) {
-        alert("Amount must be greater than zero.");
+        alert("Verification numeric values must exceed zero vectors.");
         return;
       }
 
       if (source === "video") {
         if (amount < 250) {
-          alert("Error: Minimum withdrawal threshold for Video wallet is KSh 250.");
+          alert("Error: Minimum video task distribution map requires KSh 250.");
           return;
         }
         if (Number(user.videoBalance || 0) < amount) {
-          alert("Insufficient funds in Video Watch Wallet.");
+          alert("Insufficient asset availability.");
           return;
         }
         user.videoBalance = Number(user.videoBalance) - amount;
       } else {
         if (amount < 100) {
-          alert("Error: Minimum withdrawal threshold for Referral wallet is KSh 100.");
+          alert("Error: Minimum network structural processing map requires KSh 100.");
           return;
         }
         if (Number(user.referralBalance || 0) < amount) {
-          alert("Insufficient funds in Referral Wallet.");
+          alert("Insufficient structural network balances.");
           return;
         }
         user.referralBalance = Number(user.referralBalance) - amount;
@@ -1528,7 +2346,7 @@
       const newWithdrawal = {
         id: "WD" + Math.floor(Math.random() * 90000 + 10000),
         username: user.phone,
-        walletType: source === "video" ? "Video Watch" : "Referral",
+        walletType: source === "video" ? "Video Watch Matrix" : "Referral Network",
         phone: phone,
         amount: amount,
         status: "Pending"
@@ -1536,14 +2354,14 @@
 
       withdrawals.push(newWithdrawal);
       
-      msgDiv.innerHTML = "Processing cloud server request...";
+      msgDiv.innerHTML = "Processing data entry verification...";
       await saveToGoogleDatabase();
       
       updateUI();
 
       document.getElementById("phone").value = "";
       document.getElementById("amount").value = "";
-      msgDiv.innerHTML = `<span style="color:#1fbf63;">Withdrawal request of KSh ${amount} submitted!</span>`;
+      msgDiv.innerHTML = `<span style="color:#10b981;">Withdrawal structural verification target request of KSh ${amount} submitted.</span>`;
     }
 
     function viewReceiptImage(base64DataString) {
@@ -1568,35 +2386,50 @@
       usersTable.innerHTML = "";
       users.forEach((u, idx) => {
         const tr = document.createElement("tr");
-        const displayName = u.displayName || "<em>New User</em>";
+        const displayName = u.displayName || "<em>Establishing...</em>";
+        const registrationTimestamp = u.joined || "N/A";
         
         let proofOutput = "";
         if (u.mpesaCode) {
-          proofOutput += `<code style="background:#222634; padding:3px 6px; border-radius:4px; color:#ffd24d; display:block; text-align:center; margin-bottom:4px;">${u.mpesaCode}</code>`;
+          proofOutput += `<code style="background:#0f172a; padding:3px 6px; border-radius:4px; color:#3b82f6; display:block; text-align:center; margin-bottom:4px;">${u.mpesaCode}</code>`;
         }
         if (u.mpesaReceiptImg) {
-          proofOutput += `<a href="#" onclick="viewReceiptImage(users[${idx}].mpesaReceiptImg); return false;" style="color:#1fbf63; text-decoration:underline; font-weight:bold; font-size:12px; display:block; text-align:center;">👁️ View Screenshot</a>`;
+          proofOutput += `<a href="#" onclick="viewReceiptImage(users[${idx}].mpesaReceiptImg); return false;" style="color:#10b981; text-decoration:underline; font-weight:bold; font-size:12px; display:block; text-align:center;">👁️ View Snapshot</a>`;
         }
         if (!u.mpesaCode && !u.mpesaReceiptImg) {
-          proofOutput = `<span style="color:#666; font-style:italic;">Pending</span>`;
+          proofOutput = `<span style="color:#64748b; font-style:italic;">No Data</span>`;
         }
 
-        const referrer = u.referredBy || "Direct";
-        let statusBadge = u.accountStatus === "Activated" 
-          ? `<span class="badge badge-approved">Activated</span>`
-          : `<span class="badge badge-pending">Pending</span>`;
+        const referrer = u.referredBy || "Root Context";
+        
+        let statusBadge = ``;
+        if(u.accountStatus === "Activated") {
+          statusBadge = `<div style="display:flex; flex-direction:column; gap:4px;"><span class="badge badge-approved">Activated</span><div class="active-status-light" style="padding:2px 6px; font-size:11px;"><span class="status-dot" style="width:7px; height:7px;"></span> Online</div></div>`;
+        } else if(u.accountStatus === "Suspended") {
+          statusBadge = `<span class="badge badge-suspended">Suspended</span>`;
+        } else {
+          statusBadge = `<span class="badge badge-pending">Pending</span>`;
+        }
           
-        let adminActionBtn = u.accountStatus === "Pending Approval"
-          ? `<button class="btn-green" onclick="adminActivateUser(${idx}, this)">Approve</button>`
-          : `<span style="color:#777; font-size:12px;">Verified</span>`;
+        let adminActionBtn = ``;
+        if (u.accountStatus === "Pending Approval") {
+          adminActionBtn += `<button class="btn-green" onclick="adminActivateUser(${idx}, this)" style="margin-right:4px;">Approve Node</button>`;
+        }
+        
+        if (u.accountStatus === "Suspended") {
+          adminActionBtn += `<button class="btn-orange" onclick="adminToggleSuspension(${idx}, 'Activated', this)">Reactivate</button>`;
+        } else {
+          adminActionBtn += `<button class="btn-red" onclick="adminToggleSuspension(${idx}, 'Suspended', this)">Deactivate</button>`;
+        }
 
         tr.innerHTML = `
           <td>${displayName}</td>
           <td>${u.phone}</td>
+          <td><span style="font-size:12px; color:#cbd5e1;">${registrationTimestamp}</span></td>
           <td>${statusBadge}</td>
           <td>${proofOutput}</td>
           <td>${referrer}</td>
-          <td>${adminActionBtn}</td>
+          <td><div style="display:flex; align-items:center;">${adminActionBtn}</div></td>
         `;
         usersTable.appendChild(tr);
       });
@@ -1609,7 +2442,7 @@
         let actionButtons = w.status === "Pending"
           ? `<button class="btn-green" onclick="processWithdrawal(${index}, 'Approved', this)">Approve</button>
              <button class="btn-red" onclick="processWithdrawal(${index}, 'Rejected', this)">Reject</button>`
-          : `<span style="color:#777; font-size:12px;">Processed</span>`;
+          : `<span style="color:#64748b; font-size:12px;">Completed Loop</span>`;
 
         tr.innerHTML = `
           <td>${w.username}</td>
@@ -1631,14 +2464,33 @@
       targetUser.accountStatus = "Activated";
 
       if (targetUser.referredBy) {
-        const sponsor = users.find(u => String(u.phone).trim() === String(targetUser.referredBy).trim());
-        if (sponsor) {
-          sponsor.referralBalance = Number(sponsor.referralBalance || 0) + 15; 
+        const sponsorLevel1 = users.find(u => String(u.phone).trim() === String(targetUser.referredBy).trim());
+        if (sponsorLevel1) {
+          sponsorLevel1.referralBalance = Number(sponsorLevel1.referralBalance || 0) + 20; 
+
+          if (sponsorLevel1.referredBy) {
+            const sponsorLevel2 = users.find(u => String(u.phone).trim() === String(sponsorLevel1.referredBy).trim());
+            if (sponsorLevel2) {
+              sponsorLevel2.referralBalance = Number(sponsorLevel2.referralBalance || 0) + 10;
+            }
+          }
         }
       }
 
       await saveToGoogleDatabase();
-      alert(`User ${targetUser.displayName} verified!`);
+      alert(`Node user validation sequence confirmed! Matrix variables applied.`);
+      loadAdminData();
+    }
+
+    async function adminToggleSuspension(index, newStatus, element) {
+      element.innerText = "...";
+      element.disabled = true;
+      
+      const targetUser = users[index];
+      targetUser.accountStatus = newStatus;
+      
+      await saveToGoogleDatabase();
+      alert(`Ecosystem permission state altered for node ${targetUser.phone}`);
       loadAdminData();
     }
 
@@ -1650,7 +2502,7 @@
       if (status === "Rejected") {
         const targetUser = users.find(u => String(u.phone).trim() === String(withdrawal.username).trim());
         if (targetUser) {
-          if (withdrawal.walletType === "Referral") {
+          if (withdrawal.walletType.includes("Referral")) {
             targetUser.referralBalance = Number(targetUser.referralBalance || 0) + withdrawal.amount;
           } else {
             targetUser.videoBalance = Number(targetUser.videoBalance || 0) + withdrawal.amount;
